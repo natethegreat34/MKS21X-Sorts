@@ -9,13 +9,15 @@ public class Sorts{
   int place;
   String help = "";
   for (;i <= end; i++){
-
+// for each place check if its smallest
     for (int x = 0; x <=end; x++){
-      if (ary[i] > ary [x]){
+      // if the specified place is bigger than something switch the two.
+      if (ary[i] >= ary [x]){
         small = ary [x];
         ary [x] = ary [i];
         ary[i] = small;
       }
+      // once the smallest one is found enter it into the String
         help = help + ary [i];
     }
   }

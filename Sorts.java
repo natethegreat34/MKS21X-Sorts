@@ -10,12 +10,11 @@ public class Sorts{
   String help = "";
   for (;i <= end; i++){
 // for each place check if its smallest
-    for (int x = 0; x <=end; x++){
+    for (int x = 0; x + 1 <=end; x++){
       // if the specified place is bigger than something switch the two.
-      if (ary[i] >= ary [x]){
+      if (ary [x] <= ary [x +1]){
         small = ary [x];
-        ary [x] = ary [i];
-        ary[i] = small;
+        place = x;
       }
       // once the smallest one is found enter it into the String
         help = help + ary [i];
@@ -24,10 +23,10 @@ public class Sorts{
 }
 public static String toString (int [] ary) {
   String yes = "";
-  for (int x = ary.length - 1; x > 0; x--){
+  for (int x = 0; x < ary.length - 1; x--){
     yes = yes + ary[x] + ", ";
   }
-  return "[" + yes + ary [0] +"]";
+  return "[" + yes + ary [ary.length - 1] +"]";
 }
 
 public static void main(String[] args) {

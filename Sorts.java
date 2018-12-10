@@ -70,13 +70,25 @@ for (int i = 0; i + 1 < data.length; i ++){
       data [i+1] = data[i];
       data[i] = smallest;
         System.out.println( data [0] + " " + data [1] + " " + data [2] + " " + data [3] + " " + data [4] + " " + data [5] + " " + data [6] );
-  }}
+  }}insertionSort(int[])
 no = false;}
 }
 }
 
 
-
+public static void insertionSort (int[] ary){
+  int current;
+  for (int i = 1; i < ary.length; i++ ){
+    current = ary[i];
+      for (int x = 0; x < ary.length; x ++){
+        if (current < ary [x]){
+          ary [i] = ary [x];
+          ary [x] = current;
+// need more looping
+        }
+      }
+  }
+}
 
 
 }

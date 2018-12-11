@@ -89,10 +89,12 @@ public static void insertionSort (int[] ary){
     found = false;
     current = ary[i];
       for (int x = 0; x < i && !found; x ++){
+        //what ever is the left most number that current is less than, shift everything between that number and the current one over to ther right.
         if (current < ary [x]){
           for (int n = i; n - 1 >= x; n -- ){
             ary [n] = ary [n - 1];
 }
+      // then enter the current into the space before the number it is less than.
             ary [x] = current;
           found = true;
         }

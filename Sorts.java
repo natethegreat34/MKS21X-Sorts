@@ -3,10 +3,10 @@ public class Sorts{
 
   public static void selectionSort(int [] ary) {
   int small = 0;
-  int place = 0;
   for (int i = 0; i < ary.length ; i++){
 // for each place check if its smallest
         int smaller = ary [i];
+          int place = i;
     for (int x = i  ; x < ary.length; x ++){
       // if the specified place is smaller than the minimum.
       if (smaller > ary [x]){
@@ -41,8 +41,8 @@ for (int x = 0; x < 10; x++){
   lol[x] = randge.nextInt() % 10;
 }
 Random andge = new Random();
-int[] hod = new int[10];
-for (int x = 0; x < 10; x++){
+int[] hod = new int[7];
+for (int x = 0; x < 7; x++){
   hod[x] = andge.nextInt() % 10;
 }
 System.out.println(toString (test));
@@ -86,28 +86,23 @@ no = false;}
 
 
 public static void insertionSort (int[] ary){
-  int replaced = 0;
-  int replacer = 0;
-  int need = 0;
+  boolean found = false;
   int current = 0;
   int oof = 0;
   for (int i = 1; i < ary.length; i++ ){
+    found = false;
     current = ary[i];
+    while (!found){
       for (int x = 0; x < i; x ++){
         if (current < ary [x]){
-          replacer = ary [x];
-          ary [x] = current;
           oof = x;
-            for (int y = oof; y < ary.length; y ++){
-              replaced  = ary [y];
-              ary [y] = replacer;
-              replacer = replaced;
-            }
-// need more looping
+          for (int n = i; n - 1 >= x; n -- ){
+            ary [n] = ary [n - 1];}
+            ary [x] = current;
+          found = true;
         }
       }
-  }
-}
+    }
 
-
-}
+      }
+  }}

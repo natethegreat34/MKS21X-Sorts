@@ -36,9 +36,14 @@ public static void main(String[] args) {
     test[x] = randgen.nextInt() % 10;
 }
 Random randge = new Random();
-int[] lol = new int[7];
-for (int x = 0; x < 7; x++){
+int[] lol = new int[10];
+for (int x = 0; x < 10; x++){
   lol[x] = randge.nextInt() % 10;
+}
+Random andge = new Random();
+int[] hod = new int[10];
+for (int x = 0; x < 10; x++){
+  hod[x] = andge.nextInt() % 10;
 }
 System.out.println(toString (test));
 selectionSort (test);
@@ -47,6 +52,10 @@ System.out.println("\n---------------------------------------------\n");
 System.out.println(toString (lol));
 bubbleSort (lol);
 System.out.println(toString (lol));
+System.out.println("\n---------------------------------------------\n");
+System.out.println(toString (hod));
+insertionSort (hod);
+System.out.println(toString (hod));
 }
 public static void bubbleSort(int[] data){
   int smallest = 0;
@@ -70,20 +79,30 @@ for (int i = 0; i + 1 < data.length; i ++){
       data [i+1] = data[i];
       data[i] = smallest;
         System.out.println( data [0] + " " + data [1] + " " + data [2] + " " + data [3] + " " + data [4] + " " + data [5] + " " + data [6] );
-  }}insertionSort(int[])
+  }}
 no = false;}
 }
 }
 
 
 public static void insertionSort (int[] ary){
-  int current;
+  int replaced = 0;
+  int replacer = 0;
+  int need = 0;
+  int current = 0;
+  int oof = 0;
   for (int i = 1; i < ary.length; i++ ){
     current = ary[i];
-      for (int x = 0; x < ary.length; x ++){
+      for (int x = 0; x < i; x ++){
         if (current < ary [x]){
-          ary [i] = ary [x];
+          replacer = ary [x];
           ary [x] = current;
+          oof = x;
+            for (int y = oof; y < ary.length; y ++){
+              replaced  = ary [y];
+              ary [y] = replacer;
+              replacer = replaced;
+            }
 // need more looping
         }
       }

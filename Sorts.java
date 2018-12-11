@@ -15,7 +15,7 @@ public class Sorts{
       }
 }
       //Swapping
-System.out.println("the min = " + smaller + " the place is = " + place );
+
       ary [place] = ary [i];
       ary [i] = smaller;
     }
@@ -41,8 +41,8 @@ for (int x = 0; x < 10; x++){
   lol[x] = randge.nextInt() % 10;
 }
 Random andge = new Random();
-int[] hod = new int[7];
-for (int x = 0; x < 7; x++){
+int[] hod = new int[10];
+for (int x = 0; x < 10; x++){
   hod[x] = andge.nextInt() % 10;
 }
 System.out.println(toString (test));
@@ -63,12 +63,10 @@ public static void bubbleSort(int[] data){
   boolean allgood = false;
   //checks to see if in right order
 for (int turns = 0; allgood == false; turns ++){
-    System.out.println("number of times " + turns);
   for (int x = 0; x + 1< data.length; x ++){
     if (data [x] > data [x+1]){
       no = true;
     }}
-    System.out.println("no is " + no);
     if (no == false){allgood = true;}
 
     //Swapping
@@ -78,7 +76,6 @@ for (int i = 0; i + 1 < data.length; i ++){
       smallest = data [i+1];
       data [i+1] = data[i];
       data[i] = smallest;
-        System.out.println( data [0] + " " + data [1] + " " + data [2] + " " + data [3] + " " + data [4] + " " + data [5] + " " + data [6] );
   }}
 no = false;}
 }
@@ -88,16 +85,14 @@ no = false;}
 public static void insertionSort (int[] ary){
   boolean found = false;
   int current = 0;
-  int oof = 0;
   for (int i = 1; i < ary.length; i++ ){
     found = false;
     current = ary[i];
-    while (!found){
-      for (int x = 0; x < i; x ++){
+      for (int x = 0; x < i && !found; x ++){
         if (current < ary [x]){
-          oof = x;
           for (int n = i; n - 1 >= x; n -- ){
-            ary [n] = ary [n - 1];}
+            ary [n] = ary [n - 1];
+}
             ary [x] = current;
           found = true;
         }
@@ -105,4 +100,4 @@ public static void insertionSort (int[] ary){
     }
 
       }
-  }}
+  }

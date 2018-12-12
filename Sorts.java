@@ -36,10 +36,8 @@ public static void main(String[] args) {
     test[x] = randgen.nextInt() % 10;
 }
 Random randge = new Random();
-int[] lol = new int[10];
-for (int x = 0; x < 10; x++){
-  lol[x] = randge.nextInt() % 10;
-}
+int[] lol = new int[10000000];
+
 Random andge = new Random();
 int[] hod = new int[10];
 for (int x = 0; x < 10; x++){
@@ -49,9 +47,8 @@ System.out.println(toString (test));
 selectionSort (test);
 System.out.println(toString (test));
 System.out.println("\n---------------------------------------------\n");
-System.out.println(toString (lol));
 bubbleSort (lol);
-System.out.println(toString (lol));
+System.out.println("done");
 System.out.println("\n---------------------------------------------\n");
 System.out.println(toString (hod));
 insertionSort (hod);
